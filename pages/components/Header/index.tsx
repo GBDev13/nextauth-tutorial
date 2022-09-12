@@ -1,9 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { signIn, signOut, useSession } from "next-auth/react";
-
 export function Header() {
-  const { data: session } = useSession();
-
   return (
     <nav id="header" className="w-full z-30 top-0 py-1">
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
@@ -66,43 +62,30 @@ export function Header() {
         </div>
 
         <div className="order-2 md:order-3 flex items-center" id="nav-content">
-          {session ? (
-            <button
-              onClick={() => signOut()}
-              className="flex gap-2 items-center"
-            >
-              <img
-                src="http://github.com/GBDev13.png"
-                alt="profile"
-                style={{ width: 30, height: 30, borderRadius: "50%" }}
-              />
-              <div className="flex flex-col items-start">
-                <span className="text-gray-800 text-sm">
-                  {session?.user?.name}
-                </span>
-                <span className="text-gray-500 text-xs">
-                  {session?.user?.email}
-                </span>
-              </div>
-            </button>
-          ) : (
-            <button
-              className="inline-block no-underline hover:text-black"
-              onClick={() => signIn("github")}
-            >
-              <svg
-                className="fill-current hover:text-black"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <circle fill="none" cx="12" cy="7" r="3" />
-                <path d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z" />
-              </svg>
-            </button>
-          )}
+          {/* <button className="flex gap-2 items-center">
+            <img
+              src="http://github.com/GBDev13.png"
+              alt="profile"
+              style={{ width: 30, height: 30, borderRadius: "50%" }}
+            />
+            <div className="flex flex-col items-start">
+              <span className="text-gray-800 text-sm">Name</span>
+              <span className="text-gray-500 text-xs">Email</span>
+            </div>
+          </button> */}
 
+          <button className="inline-block no-underline hover:text-black">
+            <svg
+              className="fill-current hover:text-black"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <circle fill="none" cx="12" cy="7" r="3" />
+              <path d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z" />
+            </svg>
+          </button>
           <a
             className="pl-3 inline-block no-underline hover:text-black"
             href="#"
