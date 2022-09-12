@@ -71,11 +71,13 @@ export function Header() {
               onClick={() => signOut()}
               className="flex gap-2 items-center"
             >
-              <img
-                src="http://github.com/GBDev13.png"
-                alt="profile"
-                style={{ width: 30, height: 30, borderRadius: "50%" }}
-              />
+              {session?.user?.image && (
+                <img
+                  src={session.user.image}
+                  alt="profile"
+                  style={{ width: 30, height: 30, borderRadius: "50%" }}
+                />
+              )}
               <div className="flex flex-col items-start">
                 <span className="text-gray-800 text-sm">
                   {session?.user?.name}
