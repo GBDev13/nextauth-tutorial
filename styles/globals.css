@@ -1,26 +1,20 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.work-sans {
+  font-family: "Work Sans", sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+#menu-toggle:checked + #menu {
+  display: block;
 }
 
-* {
-  box-sizing: border-box;
+.hover\:grow {
+  transition: all 0.3s;
+  transform: scale(1);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.hover\:grow:hover {
+  transform: scale(1.02);
 }
